@@ -1,0 +1,9 @@
+org\arj\mcplugins\brutallegendsplugin\BrutalLegendsPlugin.class
+org\arj\mcplugins\brutallegendsplugin\Listener\TotemUseHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\HarderMendingLootHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\ChatHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\HealthHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\ItemStackHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\CombatLogHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\NoTotemDropHandler.class
+org\arj\mcplugins\brutallegendsplugin\Listener\HarderTotemLootHandler.class
