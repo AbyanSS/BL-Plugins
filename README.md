@@ -1,6 +1,6 @@
 # BL-Plugins
 # Created by AbyanSS
-This is a custom plugin that I made which is similar to the one of the Minecraft SMPs in Indonesia, Brutal Legends
+This is a custom plugin that I made which is similar to the one of the Minecraft SMP's in Indonesia, Brutal Legends
 
 = Plugin that include in this project =
 1. Disable Chat ✓
