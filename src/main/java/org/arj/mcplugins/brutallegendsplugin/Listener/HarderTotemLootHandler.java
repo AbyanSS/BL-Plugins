@@ -8,10 +8,18 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
+import org.arj.mcplugins.brutallegendsplugin.Template.TemplateSectionHandler; // Import class TemplateSectionHandler
 
 import java.util.Random;
 
 public class HarderTotemLootHandler implements Listener {
+
+    private final TemplateSectionHandler templateSectionHandler; // Inisialisasi TemplateSectionHandler
+
+    public HarderTotemLootHandler(TemplateSectionHandler templateSectionHandler) {
+        this.templateSectionHandler = templateSectionHandler;
+    }
+
     @EventHandler
     public void onEntityDeath(EntityDeathEvent event){
         if(event.getEntity() instanceof Evoker){
@@ -21,11 +29,9 @@ public class HarderTotemLootHandler implements Listener {
                 if (hasPlayerLuckyChance()) {
                     ItemStack totem = new ItemStack(Material.TOTEM_OF_UNDYING, 1);
                     event.getDrops().add(totem);
-                    killer.sendMessage("U Got §6Totem");
-                    Bukkit.getLogger().info(killer.getDisplayName() + "Got 1 §6Totem, How lucky!");
+                    sendLootMessage(killer, true); // Mengirim pesan ke player saat mendapat totem
                 } else {
-                    killer.sendMessage("§4Never Give up n Never Surentod!");
-                    Bukkit.getLogger().info(killer.getDisplayName() + "Didn't have his/her luck today!");
+                    sendLootMessage(killer, false); // Mengirim pesan ke player saat tidak mendapat totem
                 }
             }
         }
@@ -37,6 +43,12 @@ public class HarderTotemLootHandler implements Listener {
             //Clear all item that Evoker will drop
             event.getDrops().clear();
         }
+    }
+
+    private void sendLootMessage(Player player, boolean gotTotem) {
+        String message = gotTotem ? "U Got §6Totem" : "§4Never Give up n Never Surentod!";
+        templateSectionHandler.kirimPesan(player, message); // Mengirim pesan ke player dengan TemplateSectionHandler
+        Bukkit.getLogger().info(player.getDisplayName() + (gotTotem ? " Got 1 §6Totem, How lucky!" : " Didn't have his/her luck today!"));
     }
 
     private boolean hasPlayerLuckyChance() {

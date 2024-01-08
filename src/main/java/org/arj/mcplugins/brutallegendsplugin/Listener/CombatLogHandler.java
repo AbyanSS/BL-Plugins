@@ -92,13 +92,13 @@ public class CombatLogHandler implements Listener {
             // Iterate through the attacker's inventory and set cooldown for all Trident items.
             for (ItemStack item : attacker.getInventory().getContents()) {
                 if (item != null && item.getType() == Material.TRIDENT) {
-                    attacker.setCooldown(Material.TRIDENT, 200); // 10 seconds (200 Ticks).
+                    attacker.setCooldown(Material.TRIDENT, 500); // 25 seconds (500 Ticks).
                 }
             }
             // Iterate through the victim's inventory and set cooldown for all Trident items.
             for (ItemStack item : victim.getInventory().getContents()) {
                 if (item != null && item.getType() == Material.TRIDENT) {
-                    victim.setCooldown(Material.TRIDENT, 200); // 10 seconds (200 Ticks).
+                    victim.setCooldown(Material.TRIDENT, 500); // 25 seconds (500 Ticks).
                 }
             }
         }
@@ -137,7 +137,7 @@ public class CombatLogHandler implements Listener {
             ItemStack item = player.getInventory().getItem(i);
 
             if (isDoombringerAxe(item)) {
-                player.setCooldown(Material.DIAMOND_AXE, 300); // 300 ticks = 15 seconds
+                player.setCooldown(Material.DIAMOND_AXE, 400); // 400 ticks = 20 seconds
                 break;
             }
         }

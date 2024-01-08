@@ -3,6 +3,8 @@ D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutall
 D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Listener\CombatLogHandler.java
 D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Listener\ItemStackHandler.java
 D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\BrutalLegendsPlugin.java
+D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Template\TemplateSectionHandler.java
+D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Listener\ItemDespawnHandler.java
 D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Listener\HarderTotemLootHandler.java
 D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Listener\NoTotemDropHandler.java
 D:\Code\IdeaProjects\BrutalLegendsPlugin\src\main\java\org\arj\mcplugins\brutallegendsplugin\Listener\ChatHandler.java

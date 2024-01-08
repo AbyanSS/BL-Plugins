@@ -1,6 +1,7 @@
 package org.arj.mcplugins.brutallegendsplugin;
 
 import org.arj.mcplugins.brutallegendsplugin.Listener.*;
+import org.arj.mcplugins.brutallegendsplugin.Template.TemplateSectionHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BrutalLegendsPlugin extends JavaPlugin {
@@ -17,17 +18,21 @@ public final class BrutalLegendsPlugin extends JavaPlugin {
      * 8. Combat Log ✓
      * 9. Nerf Doombringer Axe
      * 10. Item Stack Limit (BUG)
+     * 11. Item Despawn
      * **/
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new ChatHandler(), this);
+        TemplateSectionHandler templateSectionHandler = new TemplateSectionHandler();
+        ChatHandler chatHandler = new ChatHandler(this, templateSectionHandler);
+
+        getServer().getPluginManager().registerEvents(chatHandler, this);
         getServer().getPluginManager().registerEvents(new CombatLogHandler(), this);
         getServer().getPluginManager().registerEvents(new HarderMendingLootHandler(), this);
-        getServer().getPluginManager().registerEvents(new HarderTotemLootHandler(), this);
+        getServer().getPluginManager().registerEvents(new HarderTotemLootHandler(templateSectionHandler), this);
         getServer().getPluginManager().registerEvents(new HealthHandler(), this);
-        getServer().getPluginManager().registerEvents(new ItemStackHandler(), this);
+//        getServer().getPluginManager().registerEvents(new ItemStackHandler(), this);
         getServer().getPluginManager().registerEvents(new TotemUseHandler(), this);
 
         getCommand("toggletotemdrops").setExecutor(this);

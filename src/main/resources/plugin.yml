@@ -11,3 +11,6 @@ commands:
   togglechat:
     description: Toogle On/Off Disable Chat Plugin
     usage: /togglechat
+  clearlag:
+    description: Clear Lag
+    usage: /clearlag
